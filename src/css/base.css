@@ -806,6 +806,8 @@ html.has-scroll-dragging {
 		transition: color 0.5s ease-out 100ms;
 		cursor: pointer;
 		color: #191b1d;
+		margin-left:0.5em;
+		margin-right:0.5em;
 
 	}
 	.menu__links:hover {
