@@ -621,11 +621,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.preloadImages = exports.preloadFonts = void 0;
 
-var imagesLoaded = require('imagesloaded'); // Preload images
+var imagesLoaded = require("imagesloaded"); // Preload images
 
 
 var preloadImages = function preloadImages() {
-  var selector = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'img';
+  var selector = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "img";
   return new Promise(function (resolve) {
     imagesLoaded(document.querySelectorAll(selector), {
       background: true
@@ -3818,28 +3818,33 @@ var _locomotiveScroll = _interopRequireDefault(require("locomotive-scroll"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var backtopEl = document.querySelector('.backtop');
-var workEl = document.querySelector('#linkw');
-var projectEl = document.querySelector('#projects');
-var linkmeEl = document.querySelector('#linkme');
-var aboutEl = document.querySelector('#aboutme');
-var headerEl = document.querySelector('#header'); // Preload  images and fonts
+var topBackEl = document.querySelector(".img__bottom");
+var backtopEl = document.querySelector(".backtop");
+var workEl = document.querySelector("#linkw");
+var projectEl = document.querySelector("#finish");
+var linkmeEl = document.querySelector("#linkme");
+var aboutEl = document.querySelector("#aboutme");
+var headerEl = document.querySelector("#header");
+var footerEl = document.querySelector(".footer__links__to"); // Preload  images and fonts
 
-Promise.all([(0, _utils.preloadImages)('.tiles__line-img'), (0, _utils.preloadFonts)('rmd7deq')]).then(function () {
+Promise.all([(0, _utils.preloadImages)(".tiles__line-img"), (0, _utils.preloadFonts)("rmd7deq")]).then(function () {
   // Remove loader (loading class)
-  document.body.classList.remove('loading'); // Initialize the Locomotive scroll
+  document.body.classList.remove("loading"); // Initialize the Locomotive scroll
 
   var scroll = new _locomotiveScroll.default({
-    el: document.querySelector('[data-scroll-container]'),
+    el: document.querySelector("[data-scroll-container]"),
     smooth: true
   });
-  backtopEl.addEventListener('click', function () {
+  topBackEl.addEventListener("click", function () {
+    return scroll.scrollTo(footerEl);
+  });
+  backtopEl.addEventListener("click", function () {
     return scroll.scrollTo(headerEl);
   });
-  workEl.addEventListener('click', function () {
+  workEl.addEventListener("click", function () {
     return scroll.scrollTo(projectEl);
   });
-  linkmeEl.addEventListener('click', function () {
+  linkmeEl.addEventListener("click", function () {
     return scroll.scrollTo(aboutEl);
   });
 });
@@ -3871,7 +3876,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61709" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50630" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
